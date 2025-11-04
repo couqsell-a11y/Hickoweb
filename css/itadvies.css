@@ -1,0 +1,103 @@
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-color: #f4f7f9;
+    }
+
+    a {
+        color: #5da9e9;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+
+    .hero {
+        text-align: left;
+        padding: 60px 0;
+        background-color: #e9f0f5;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .hero a {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 60px 0;
+    }
+
+    .section img {
+        max-width: 100%;
+        border-radius: 6px;
+    }
+
+    .section-text {
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .section h2::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: #5da9e9;
+        margin-top: 5px;
+    }
+
+    .steps {
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+    }
+
+    .steps div {
+        margin-bottom: 20px;
+    }
+
+    .steps h3 {
+        color: #5da9e9;
+        margin-bottom: 10px;
+    }
+
+    .steps strong {
+        font-weight: bold;
+    }
+
+    @media(max-width: 900px){
+        .section {
+            flex-direction: column;
+        }
+    }

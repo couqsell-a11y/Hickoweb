@@ -1,0 +1,189 @@
+/* ==========================================================================
+   1. GLOBAL STYLES
+   ========================================================================== */
+body {
+  background-color: lightblue;
+  padding-top: 80px; /* adjust for navbar height */
+  transition: padding-top 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  body {
+    padding-top: 120px; /* adjust if navbar grows taller on mobile */
+  }
+}
+
+/* ==========================================================================
+   2. NAVBAR BASE
+   ========================================================================== */
+
+.navbar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Centered desktop search bar */
+.navbar .mx-auto {
+  max-width: 40%;
+}
+
+/* Transparent by default */
+#mainNavbar {
+  background-color: transparent !important;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Solid background after scrolling */
+#mainNavbar.scrolled {
+  background-color: #fff !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar links */
+#mainNavbar .nav-link {
+  color: #fff !important; /* white on transparent */
+  transition: color 0.3s ease;
+}
+
+#mainNavbar.scrolled .nav-link {
+  color: #000 !important; /* black on white */
+}
+
+/* Navbar logo brightness */
+#mainNavbar img {
+  transition: filter 0.3s ease;
+}
+
+#mainNavbar.scrolled img {
+  filter: brightness(0);
+}
+
+/* ==========================================================================
+   3. MOBILE NAVBAR BEHAVIOR
+   ========================================================================== */
+
+/* Prevent search bar overlap */
+@media (max-width: 992px) {
+  .navbar .mx-auto {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Mobile menu background */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: white !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Force black text/icons when expanded on mobile */
+@media (max-width: 992px) {
+  #mainNavbar .navbar-collapse.show {
+    background-color: #fff !important;
+  }
+
+  #mainNavbar .navbar-collapse.show .nav-link {
+    color: #000 !important;
+  }
+
+  #mainNavbar .navbar-collapse.show .nav-link:hover {
+    color: #007bff !important;
+  }
+}
+
+/* Mobile search icon (magnifying glass) color fix */
+#mainNavbar .btn-link .fa {
+  color: #fff !important; /* white on transparent */
+}
+#mainNavbar.scrolled .btn-link .fa {
+  color: #000 !important; /* black on white after scroll */
+}
+
+/* If using the JS that adds .menu-open on expand */
+#mainNavbar.menu-open .btn-link .fa {
+  color: #000 !important;
+}
+
+/* Hover color */
+#mainNavbar .btn-link .fa:hover {
+  color: #007bff !important;
+}
+
+/* ==========================================================================
+   4. MOBILE SEARCH BAR
+   ========================================================================== */
+
+.mobile-search {
+  display: none;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-search.show {
+  display: block;
+}
+
+/* ==========================================================================
+   5. HERO SECTION
+   ========================================================================== */
+
+/* Default (desktop) hero */
+.hero {
+  background-image: url("pics/your-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+/* Hero overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Hero text */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* Use a different hero image on mobile if desired */
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("pics/your-background-mobile.jpg");
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
